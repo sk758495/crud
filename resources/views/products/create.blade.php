@@ -30,7 +30,8 @@
     <h1>New Products</h1>
     </div>
     <div class="container mt-5">
-        <form method="POST" action="/products/store">
+        <form method="POST" action="/products/store" enctype="multipart/form-data">
+        @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -38,12 +39,12 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                <textarea class="form-control" id="description" name="desc" rows="3" required></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="images" class="form-label">Images</label>
-                <input type="file" class="form-control" id="images" name="images" multiple>
+                <input type="file" class="form-control" id="images" name="image" multiple>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
